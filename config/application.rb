@@ -14,5 +14,17 @@ module Projects
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.generators do |g|
+      g.test_framework :rspec,
+      fixtures: false,
+      # テストデータベースにレコードを作成するファイルの作成をスキップする
+      view_specs: false,
+      # ビュースペックを作成しないことを指定する
+      helper_specs: false,
+      # ヘルパーファイル用のスペックを作成しないことを指定する
+      routing_spacs: false
+      # config/routes.rb用のスペックファイルの作成を省略する
+    end
   end
 end
