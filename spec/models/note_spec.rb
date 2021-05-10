@@ -16,8 +16,7 @@ RSpec.describe Note, type: :model do
     )
   end
 
-  # ユーザー、プロジェクト、メッセージがあれば有効な状態であること
-  it "is valid with a user, project, and message" do
+  it "ユーザー、プロジェクト、メッセージがあれば有効な状態であること" do
     note = Note.new(
       message: "This is a sample note.",
       user: @user,
@@ -26,15 +25,13 @@ RSpec.describe Note, type: :model do
     expect(note).to be_valid
   end
 
-  # メッセージがなければ無効な状態であること
-  it "is invalid without a message" do
+  it "メッセージがなければ無効な状態であること" do
     note = Note.new(message: nil)
     note.valid?
     expect(note.errors[:message]).to include("can't be blank")
   end
 
-  # 文字列に一致するメッセージを検索する
-  describe "search message for a term" do
+  describe "文字列に一致するメッセージを検索する" do
     before do
       # 検索機能の全テストに関連する追加のテストデータをセットアップする
       @note1 = @project.notes.create(
@@ -51,18 +48,14 @@ RSpec.describe Note, type: :model do
       )
     end
 
-    # 一致するデータが見つかるとき
-    context "when a match is found" do
-      # 検索文字列に一致するメモを返すこと
-      it "returns notes that match the search term" do
+    context "一致するデータが見つかるとき" do
+      it "検索文字列に一致するメモを返すこと" do
         expect(Note.search("first")).to include(@note1, @note3)
       end
     end
 
-    # 一致するデータが1件も見つからないとき
-    context "when no match is found" do
-      # 空のコレクションを返すこと
-      it "returns an empty collection" do
+    context "一致するデータが1件も見つからないとき" do
+      it "空のコレクションを返すこと" do
         expect(Note.search("message")).to be_empty
       end
     end
