@@ -1,4 +1,4 @@
-# *Everyday Rails Testing with RSpec* sample application (2017 edition)
+# *Aaron Sumner 「Everyday Rails - RSpecによるRailsテスト入門」の勉強用です。
 
 Refer to the [Everyday Rails] blog for news on this edition of the book. You
 can find sample source for earlier editions in the [everydayrails
