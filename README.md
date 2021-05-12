@@ -1,4 +1,4 @@
-# *Aaron Sumner 「Everyday Rails - RSpecによるRailsテスト入門」の勉強用です。
+# Aaron Sumner 「Everyday Rails - RSpecによるRailsテスト入門」の勉強用です。
 
 Refer to the [Everyday Rails] blog for news on this edition of the book. You
 can find sample source for earlier editions in the [everydayrails
